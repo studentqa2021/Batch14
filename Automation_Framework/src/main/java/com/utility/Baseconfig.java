@@ -7,10 +7,10 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class Baseconfig {
-	public static String getconfigvalue() {
+	
+	public static String getConfigproperties(String value){
 		
 		File file=new File("./Config.properties");
-		
 		
 		FileInputStream fis = null;
 		try {
@@ -19,11 +19,10 @@ public class Baseconfig {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-				
-				
-				
 		
-		Properties pro=new Properties();
+		
+		
+		Properties pro= new Properties();
 		try {
 			pro.load(fis);
 		} catch (IOException e) {
@@ -31,17 +30,18 @@ public class Baseconfig {
 			e.printStackTrace();
 		}
 		
+		System.out.println(pro.getProperty(value));
+		//System.out.println(pro.getProperty("User"));
+		//System.out.println(pro.getProperty("password"));
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		return "";
+		return" ";
+	}
+	
+	public static void main(String[] args) {
+		Baseconfig.getConfigproperties("password");
 		
 	}
-
 }
+

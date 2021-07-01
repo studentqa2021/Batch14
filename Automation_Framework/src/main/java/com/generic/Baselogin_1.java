@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.utility.BaseConfig1;
+import com.utility.Baseconfig;
 
 public class Baselogin_1 implements Login  {
 
@@ -23,8 +24,8 @@ public class Baselogin_1 implements Login  {
 		  driver.manage().window().maximize();
 		  MasterPageFactory obj=new  MasterPageFactory(driver);
 		  obj.getLoginbuttn().click();
-		  obj.getEmail().sendKeys(BaseConfig1.getConfigValue1("User"));
-		  obj.getPaswrd().sendKeys(BaseConfig1.getConfigValue1("password"));
+		  obj.getEmail().sendKeys(Baseconfig.getConfigproperties("User"));
+		  obj.getPaswrd().sendKeys(Baseconfig.getConfigproperties("password"));
 		  obj.getLoginbuttn().click();
 		 // driver.findElement(By.xpath("//*[@class='login']")).click();
 		  

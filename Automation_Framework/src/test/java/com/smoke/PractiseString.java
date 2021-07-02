@@ -2,11 +2,11 @@ package com.smoke;
 
 public class PractiseString {
 	
-		static int a=50;
-		static int b=30;
+		//static int a=50;
+	//	static int b=30;
 	
 	
-		public static void getswap() {
+		public static void getswap(int a, int b) {
 			System.out.println("before swap a value is ="+a);
 			System.out.println("before swap b value is ="+b);
 			//swap the value
@@ -19,7 +19,7 @@ public class PractiseString {
 				
 		}
 		public static void main(String[] args) {
-			PractiseString.getswap();
+			PractiseString.getswap(100,200);
 			
 			
 		}

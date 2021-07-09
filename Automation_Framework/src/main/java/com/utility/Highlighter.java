@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 
 public class Highlighter {
 
-void addColor(WebElement element,WebDriver driver){
+public static void addColor(WebElement element,WebDriver driver){
  
  JavascriptExecutor obj = (JavascriptExecutor)driver; //type casting
 

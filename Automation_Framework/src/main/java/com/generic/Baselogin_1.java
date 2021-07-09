@@ -1,41 +1,34 @@
 	package com.generic;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
+
+
 import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import com.utility.BaseConfig1;
 import com.utility.Baseconfig;
+import com.utility.Highlighter;
+import com.utility.Screenshoter;
 
-public class Baselogin_1 implements Login  {
+public class Baselogin_1   {
 
-	@Override
-	public void logout() {
+	public static void logout() {
 		  
-		  System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");  //for chrome
-			WebDriver driver = new ChromeDriver();
-		//	driver.get("www.facebook.com");
-		  driver.navigate().to(BaseConfig1.getConfigValue1("URL"));
-		//  driver.navigate().refresh();	
-		//  driver.navigate().forward();
-		//  driver.navigate().back();
+ System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");  //for chrome
+WebDriver driver = new ChromeDriver();
+	
+ driver.navigate().to(Baseconfig.getConfigproperties("URL"));
+		
 		//  driver.manage().window().fullscreen();
-		  driver.manage().window().maximize();
-		  MasterPageFactory obj=new  MasterPageFactory(driver);
-		  obj.getLoginbuttn().click();
-		  obj.getEmail().sendKeys(Baseconfig.getConfigproperties("User"));
-		  obj.getPaswrd().sendKeys(Baseconfig.getConfigproperties("password"));
-		  obj.getLoginbuttn().click();
-		 // driver.findElement(By.xpath("//*[@class='login']")).click();
-		  
-		  //looking for single object in my object
-  //driver.findElement(By.xpath("//*[@id='email']")).sendKeys("sarowerny@gmail.com");
- // driver.findElement(By.xpath("//*[@id='passwd']")).sendKeys("student");
-// driver.findElement(By.xpath("//*[@class='button btn btn-default button-medium']")).click();
-// driver.quit();
+ driver.manage().window().maximize();
+ MasterPageFactory obj=new  MasterPageFactory(driver);
+ Highlighter.addColor (obj.getLogin(), driver);
+ Screenshoter.	getscreenshot  (driver, "homepage");
+ obj.getLogin().click();
+ obj.getEmail().sendKeys(Baseconfig.getConfigproperties("User"));
+ obj.getPassword().sendKeys(Baseconfig.getConfigproperties("password"));
+  obj.getLogin().click();
 	}
+	
 }
-	
-	
-
+		 

@@ -3,7 +3,7 @@ package com.generic;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class BaseLogin  {
+public class googlelogin  {
  static String login(){
 	  
 	  System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");  //for chrome
@@ -15,7 +15,7 @@ public class BaseLogin  {
 	   return "name";
    }
   public static void main(String[] args) {
-	  BaseLogin.login();
+	  googlelogin.login();
 	 
 }
 }

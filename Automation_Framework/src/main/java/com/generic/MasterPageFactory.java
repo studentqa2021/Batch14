@@ -8,36 +8,31 @@ import org.openqa.selenium.support.PageFactory;
 public class MasterPageFactory {
 	public MasterPageFactory(WebDriver driver) {
 		PageFactory.initElements(driver, this );
-		
-	}
-	
-	
-	@FindBy(xpath="//*[@name='email']")
+		}
+	@FindBy (xpath="//*[contains(text(),'Sign in')]")
+	private WebElement signin;
+	@FindBy (xpath="(//*[contains(@id,'email')])[2]")
 	private WebElement email;
-	
-	//@FindBy(xpath="//*[contains(text(),'email')]")
-//	private WebElement email;
-	
-	@FindBy(xpath="//*[@id='pass']")
-	private WebElement  paswrd ;
-	
-	@FindBy(xpath="//*[@name='login']")
-	private WebElement loginbuttn ;
-
+	@FindBy(xpath="//*[contains(@id,'passwd')]")
+	private WebElement password;
+	@FindBy(xpath="//*[@class='icon-lock left']")
+	private WebElement login;
+	public WebElement getSignin() {
+		return signin;
+	}
 	public WebElement getEmail() {
 		return email;
 	}
-
-	public WebElement getPaswrd() {
-		return paswrd;
+	public WebElement getPassword() {
+		return password;
 	}
-
-	public WebElement getLoginbuttn() {
-		return loginbuttn;
+	public WebElement getLogin() {
+		return login;
 	}
 	
+
 }
-		
-	
 
+	
+	
 

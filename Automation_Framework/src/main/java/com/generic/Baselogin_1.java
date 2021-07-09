@@ -1,9 +1,6 @@
 	package com.generic;
 
-
-
 import org.openqa.selenium.WebDriver;
-
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.utility.Baseconfig;
@@ -12,7 +9,7 @@ import com.utility.Screenshoter;
 
 public class Baselogin_1   {
 
-	public static void logout() {
+	public  void getLogout() {
 		  
  System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");  //for chrome
 WebDriver driver = new ChromeDriver();
@@ -22,11 +19,15 @@ WebDriver driver = new ChromeDriver();
 		//  driver.manage().window().fullscreen();
  driver.manage().window().maximize();
  MasterPageFactory obj=new  MasterPageFactory(driver);
- Highlighter.addColor (obj.getLogin(), driver);
+Highlighter.addColor(driver, obj.getSignin());
  Screenshoter.	getscreenshot  (driver, "homepage");
- obj.getLogin().click();
+ obj.getSignin().click();
+ Highlighter.addColor(driver, obj.getEmail());
  obj.getEmail().sendKeys(Baseconfig.getConfigproperties("User"));
+ Highlighter.addColor (driver,obj.getPassword());
  obj.getPassword().sendKeys(Baseconfig.getConfigproperties("password"));
+ Highlighter.addColor (driver,obj.getLogin());
+ Screenshoter.	getscreenshot  (driver, "Login page");
   obj.getLogin().click();
 	}
 	

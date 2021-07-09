@@ -36,7 +36,7 @@ public class Baseconfig {
 		
 		
 		
-		return" ";
+		return pro.getProperty(value);
 	}
 	
 	public static void main(String[] args) {

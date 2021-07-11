@@ -9,16 +9,9 @@ import com.utility.Screenshoter;
 
 public class Baselogin_1   {
 
-	public  void getLogout() {
+	public   MasterPageFactory getLogout(WebDriver driver) {
 		  
- System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");  //for chrome
-WebDriver driver = new ChromeDriver();
-	
- driver.navigate().to(Baseconfig.getConfigproperties("URL"));
-		
-		//  driver.manage().window().fullscreen();
- driver.manage().window().maximize();
- MasterPageFactory obj=new  MasterPageFactory(driver);
+MasterPageFactory obj=new  MasterPageFactory(driver);
 Highlighter.addColor(driver, obj.getSignin());
  Screenshoter.	getscreenshot  (driver, "homepage");
  obj.getSignin().click();
@@ -29,7 +22,17 @@ Highlighter.addColor(driver, obj.getSignin());
  Highlighter.addColor (driver,obj.getLogin());
  Screenshoter.	getscreenshot  (driver, "Login page");
   obj.getLogin().click();
+// boolean statusLogin = obj.getLogout().isDisplayed();
+// if( obj.getLogout().isDisplayed() ) {
+//	 System.out.println("Login passed");
+// }else {
+//	 System.out.println("login failed");
+// }
+ return obj;
+	 
+ }
+	
 	}
 	
-}
+
 		 
